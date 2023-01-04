@@ -1,21 +1,22 @@
 package com.mycrypto.http;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-        "id",
-        "rank",
-        "symbol",
-        "name",
-        "supply",
-        "maxSupply",
-        "marketCapUsd",
-        "volumeUsd24Hr",
-        "priceUsd",
-        "changePercent24Hr",
-        "vwap24Hr"
-})
-public class Asset {
+import java.io.Serializable;
+import java.util.List;
+
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Asset implements Serializable {
+    private List<AssetData> data;
+
+
 }

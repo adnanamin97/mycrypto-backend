@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Set;
 
@@ -23,7 +24,7 @@ public class User {
     private String username;
 
     @Column(name = "time_stamp")
-    private Date timeStamp;
+    private LocalDateTime timeStamp;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<UserAssets> assets;
