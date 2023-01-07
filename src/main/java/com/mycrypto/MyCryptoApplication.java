@@ -2,6 +2,8 @@ package com.mycrypto;
 
 import com.auth0.client.auth.AuthAPI;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import okhttp3.OkHttpClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -41,5 +43,11 @@ public class MyCryptoApplication {
 	}
 
 	@Bean
-	public ObjectMapper objectMapper(){return new ObjectMapper();}
+	public ObjectMapper objectMapper(){
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.registerModule(new JavaTimeModule());
+		mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+
+		return mapper;
+	}
 }

@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.6.6</version>
+		<version>3.0.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mycrypto</groupId>
@@ -15,7 +15,7 @@
 	<name>my-crypto</name>
 	<description>Crypto wallet</description>
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -33,6 +33,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-oauth2-jose</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -60,10 +64,9 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+			<version>2.14.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>

@@ -23,6 +23,8 @@ public class Client {
         this.client = client;
    }
 
+
+
     public <T> ResponseEntity<T> exchange(final String url,
                                           final HttpMethod httpMethod,
                                           @Nullable final HttpEntity<?> entity,

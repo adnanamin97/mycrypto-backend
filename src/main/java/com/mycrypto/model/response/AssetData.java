@@ -1,5 +1,5 @@
 
-package com.mycrypto.http;
+package com.mycrypto.model.response;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

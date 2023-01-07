@@ -1,6 +1,7 @@
-package com.mycrypto.http;
+package com.mycrypto.model.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.mycrypto.model.response.AssetData;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
